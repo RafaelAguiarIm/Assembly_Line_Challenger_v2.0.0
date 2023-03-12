@@ -74,5 +74,5 @@ Ao acessar a aplicação, você será redirecionado para a página inicial, onde
 
 ## Contribuição
 
-Este projeto foi desenvolvido por [seu nome aqui]. Se você deseja contribuir para o projeto, sinta-se à vontade para fazer um fork do repositório e submeter um pull request com suas alterações. Será um prazer receber contribuições da comunidade!
+Este projeto foi desenvolvido por Rafael Aguiar. Se você deseja contribuir para o projeto, sinta-se à vontade para fazer um fork do repositório e submeter um pull request com suas alterações. Será um prazer receber contribuições da comunidade!
 
