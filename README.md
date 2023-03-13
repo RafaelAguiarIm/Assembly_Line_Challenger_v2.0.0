@@ -26,11 +26,13 @@ lista de tarefas e organizá-las de acordo com as regras do desafio proposto.
 - `Funcionalidade 7`: Inserir uma pausa para manutenção, que deveria ser respeitada antes de continuar as atividades
 
 
-## Features
+## Desenvolvimento e Melhorias
 
 - [x] Melhorias e abstrações no método verificaLinha()
 - [x] Melhorias na classe Assembly e AssemblyController
-- [ ] Melhorias na Classe ConversationListFromFile
+- [x] Melhorias na Classe ConversationListFromFile
+- [x] Criação da classe de negócio AssemblyBO
+- [x] Correção e remoção de métodos e variaveis que não deveriam está no ManegedBean (Colocados no AssemblyBO)
 - [ ] Modificar as instancias das Classes para injeção de dependencias
 - [ ] Aplicação de testes unitários
 
