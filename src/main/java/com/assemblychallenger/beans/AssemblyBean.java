@@ -3,6 +3,7 @@ package com.assemblychallenger.beans;
 import com.assemblychallenger.business.ConversationListFromFile;
 import com.assemblychallenger.controller.AssemblyController;
 import com.assemblychallenger.dao.AssemblyDao;
+import com.assemblychallenger.dao.AssemblyDao;
 import com.assemblychallenger.dao.LinhasDeMontagensDao;
 import com.assemblychallenger.infra.JPAUtil;
 import com.assemblychallenger.models.LinhasDeMontagens;
@@ -57,7 +58,7 @@ public class AssemblyBean {
     @PersistenceContext
     private EntityManager em = JPAUtil.getEntityManager();
     LinhasDeMontagensDao linhasDeMontagensDao = new LinhasDeMontagensDao(em);
-    AssemblyDao assemblyDao = new AssemblyDao(em);
+    AssemblyDao assemblyDaoImp = new AssemblyDao(em);
 
     public List<LinhasDeMontagens> getLinhasDeMontagens() { return linhasDeMontagens; }
     public void setLinhasDeMontagens(List<LinhasDeMontagens> linhasDeMontagens) { this.linhasDeMontagens = linhasDeMontagens; }
@@ -93,7 +94,7 @@ public class AssemblyBean {
         }
     }
     public String limparDados(){
-        assemblyDao.excluirTodos();;
+        assemblyDaoImp.excluirTodos();;
         linhasDeMontagensDao.excluirTodos();
         preRenderView();
         return "redirect:/index.xhtml";
