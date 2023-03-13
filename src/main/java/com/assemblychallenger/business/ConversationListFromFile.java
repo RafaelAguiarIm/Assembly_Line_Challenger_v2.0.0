@@ -26,7 +26,7 @@ public class ConversationListFromFile {
             BufferedReader br = new BufferedReader(new FileReader(fstream));
             String stringLines;
             int i = 0;
-            String regex = "(.*?)(\\d+)min|(.*?)(\\d+)minute|(.*?)(\\d+)minutes|(.*?)(\\d+) min|(.*?)(\\d+) minute|(.*?)(\\d+) minutes|(.*?)(\\d+) minuto|(.*?)(\\d+) minutos";
+            String regex = "(\\d+\\s*(min|minute|minutes|minuto|minutos))";
             Boolean verificaRegex = false;
             Matcher matcher;
             Pattern pattern = Pattern.compile(regex);
@@ -34,14 +34,11 @@ public class ConversationListFromFile {
                 matcher = pattern.matcher(stringLines);
                 if (matcher.find()) {
                     verificaRegex = stringLines.contains(matcher.group());
-
                 }
                 if (verificaRegex == true && !stringLines.contains("maintenance") || verificaRegex == true && stringLines.contains("maintenance")){
                     conversationList.add(stringLines);
-                    //stringLines = br.readLine();
                     i++;
                 }else {
-                    System.out.println("Entrou");
                     break;
                 }
             }
