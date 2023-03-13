@@ -22,7 +22,7 @@
                     <p:fileUpload  value="#{assemblyBean.file}" mode="simple" skinSimple="true" accept=".txt" chooseLabel="Selecione o arquivo"/>
                     <p:commandButton value="Enviar" ajax="false" action="#{assemblyBean.upload}" styleClass="mt-3 ui-button-outlined block" ignoreAutoUpdate="true"/>
 
-                    <p:commandButton  value="Limpar dados" icon="ui-icon-star" action="#{assemblyBean.limparDados}" onclick="location.reload();" update="messages, linhas" ajax="false" actionListener="#{assemblyBean.preRenderView}"/>
+                    <p:commandButton  value="Limpar dados" icon="ui-icon-star" action="#{assemblyBean.limparDados}" update="growl-sticky, growl, linhas" ajax="false"/>
                 </p:panelGrid>
 
                    <p:accordionPanel widgetVar="dataTableWidgetVar" value="#{assemblyBean.linhasDeMontagens}" var="product" id="linhas"  style="position: fixed; width: 800px; left: 400px;   right: 200px;">

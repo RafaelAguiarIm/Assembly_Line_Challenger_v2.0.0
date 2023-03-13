@@ -3,6 +3,7 @@ package com.assemblychallenger.models;
 import javax.persistence.*;
 import java.time.LocalTime;
 
+
 @Table(name = "assemblys")
 @Entity(name = "Assembly")
 public class Assembly {

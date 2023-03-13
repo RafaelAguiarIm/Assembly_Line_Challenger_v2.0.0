@@ -134,4 +134,3 @@ public class AssemblyBean {
         return "/index.xhtml?faces-redirect=true";
     }
 }
-}
