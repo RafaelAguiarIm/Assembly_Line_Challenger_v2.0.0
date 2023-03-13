@@ -31,7 +31,7 @@ lista de tarefas e organizá-las de acordo com as regras do desafio proposto.
 - [x] Melhorias e abstrações no método verificaLinha()
 - [x] Melhorias na classe Assembly e AssemblyController
 - [x] Melhorias na Classe ConversationListFromFile
-- [x] Criação da classe de negócio AssemblyBO 
+- [x] Criação da classe de negócio AssemblyBO para melhor adequação ao padrão MVC
 - [x] Correção e remoção de métodos e variaveis que não deveriam está no ManegedBean
 - [ ] Modificar as instancias das Classes para injeção de dependencias
 - [ ] Aplicação de testes unitários
