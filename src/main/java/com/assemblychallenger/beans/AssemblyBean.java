@@ -97,7 +97,7 @@ public class AssemblyBean {
         assemblyDaoImp.excluirTodos();;
         linhasDeMontagensDao.excluirTodos();
         preRenderView();
-        return "redirect:/index.xhtml";
+        return "/index.xhtml?faces-redirect=true";
     }
     private UploadedFile file;
     public UploadedFile getFile() {
@@ -106,15 +106,15 @@ public class AssemblyBean {
     public void setFile(UploadedFile file) {
         this.file = file;
     }
-    public void upload() {
+    public String upload() {
         try {
             if (file == null){
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Selecione um arquivo para fazer o upload."));
-                return;
+                return "";
             } String fileName = file.getFileName();
             if (!fileName.endsWith(".txt")) {
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Selecione um arquivo do tipo TXT."));
-                return;
+                return "";
             }
             byte[] conteudo = file.getContent();
             File arquivoTemporario = File.createTempFile("arquivo", ".tmp");
@@ -122,13 +122,16 @@ public class AssemblyBean {
             saida.write(conteudo);
             saida.close();
             String caminhoCompleto = arquivoTemporario.getAbsolutePath();
-            System.out.println("Caminho completo do arquivo: " + caminhoCompleto);
             caminho = caminhoCompleto;
             populaInput();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        return "/index.xhtml?faces-redirect=true";
     }
+}
 }
